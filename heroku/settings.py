@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'heroku.wsgi.application'
 #     }
 # }
 
-DATABASE = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/heroku')}
+DATABASES = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/heroku')}
 
 
 # Password validation
