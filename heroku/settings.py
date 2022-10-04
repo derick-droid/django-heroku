@@ -10,7 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import django
+import dj_database_url
 from pathlib import Path
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@mpzew7$xt3@k!mh!1^x76z!o6fkd@0=wgc-&3@a-d#22s*727'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -47,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'heroku.urls'
@@ -80,16 +85,18 @@ WSGI_APPLICATION = 'heroku.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'heroku', 
-        'USER': 'postgres', 
-        'PASSWORD': 'derrickokinda9@go',
-        'HOST': '127.0.0.1', 
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'heroku', 
+#         'USER': 'postgres', 
+#         'PASSWORD': 'derrickokinda9@go',
+#         'HOST': '127.0.0.1', 
+#         'PORT': '5432',
+#     }
+# }
+
+DATABASE = {'default':dj_database_url.config(default = 'postgres://postgres:derrickokinda9@go@localhost/heroku')}
 
 
 # Password validation
@@ -132,3 +139,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# whitenoise setting
+
+STATICFILES = 'whitenoise.storage.CompressedManifeststaticFilesStorage'
