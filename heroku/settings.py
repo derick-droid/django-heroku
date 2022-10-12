@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-@mpzew7$xt3@k!mh!1^x76z!o6fkd@0=wgc-&3@a-d#22s*727
 DEBUG = False
 
 # ALLOWED_HOSTS = ['git.heroku.com/pacific-basin-91359.git', 'herokuapp.co','www.herokuapp.co']
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'heroku.herokuapp.com']
 
 # Application definition
 
@@ -139,6 +140,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# whitenoise setting
 
+# whitenoise setting
 STATICFILES = 'whitenoise.storage.CompressedManifeststaticFilesStorage'
