@@ -1,2 +1,2 @@
 release: python3 manage.py migrate
-web: gunicorn heroku.wsgi
+web: gunicorn heroku.wsgi --log-file -
