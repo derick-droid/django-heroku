@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@mpzew7$xt3@k!mh!1^x76z!o6fkd@0=wgc-&3@a-d#22s*727'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  False
+DEBUG = False
 
 # ALLOWED_HOSTS = ['git.heroku.com/pacific-basin-91359.git', 'herokuapp.co','www.herokuapp.co']
 ALLOWED_HOSTS = []
